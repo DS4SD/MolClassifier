@@ -2,7 +2,6 @@
 
 FROM python:3.11-slim-bullseye AS base
 
-
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1
@@ -53,12 +52,3 @@ RUN --mount=type=cache,id=cache,sharing=locked,target=/root/.cache \
     # Optionally update dependencies
     bash -c "[ ${DEPENDENCY_VERSION} != '0' ] && poetry update --no-dev || true" \
     && poetry install
-    # Skip dev dependencies
-    #--without dev
-
-
-#RUN --mount=type=cache,id=cache,sharing=locked,target=/root/.cache \
-#    --mount=type=secret,id=poetry-config-toml,dst=/root/.config/pypoetry/config.toml \
-#    --mount=type=secret,id=poetry-auth-toml,dst=/root/.config/pypoetry/auth.toml \
-#    --mount=type=ssh \
-#    poetry run pip install git+ssh://git@github.ibm.com/VWE/image-segmentation@vwe/for-external-git
