@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "molclassifier"
+version = "0.1.0"
+description = ""
+authors = ["Valery Weber <vwe@zurich.ibm.com>"]
+readme = "README.md"
+packages = [{include = "mol_classifier"}]
+
+[tool.poetry.dependencies]
+python = "^3.11,<3.12"
+torch = "^2.2.0"
+torchvision = "^0.17.0"
+pycocotools = "^2.0.7"
+albumentations = "^1.4.0"
+imantics = "^0.1.12"
+pyproject-flake8 = "^6.1.0"
+more-itertools = "^10.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+autoflake = "^1.7.3"
+black = "^22.8.0"
+isort = "^5.10.1"
+mypy = "^0.981"
+pep8-naming = "^0.13.2"
+
+[tool.flake8]
+max-line-length = 120
+#extend-ignore = ["E203"]
+#max-complexity = 10
+
+[tool.autoflake]
+in-place = true
+remove-all-unused-imports = true
+remove-unused-variables = true
+expand-star-imports = true
+recursive = true
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+include = '\.pyi?$'
+preview = true
+
+[tool.isort]
+profile = "black"
+line_length = 120
+py_version = 310
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.mypy]
+pretty = true
+# strict = true
+no_implicit_optional = true
+namespace_packages = true
+show_error_codes = true
+python_version = "3.11"
+
+[[tool.mypy.overrides]]
+module = [
+  "torchvision.*",
+  "PIL.*",
+  "pycocotools.*",
+  "albumentations.*",
+  "albumentations_transforms.*",
+  "imantics.*",
+]
+ignore_missing_imports = true
