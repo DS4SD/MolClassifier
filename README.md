@@ -1,1 +1,1 @@
-# image-segmentation
+# MolClassifier
