@@ -16,20 +16,11 @@ ENV PATH="$PATH:/root/.local/bin" \
 RUN --mount=type=cache,target=/var/cache/apt,id=apt,sharing=locked \
     apt-get update \
     && apt-get -y install curl build-essential git libssl-dev wget \
-    #&& apt-get -y install libblas-dev liblapack-dev libatlas-base-dev \
-    #&& apt-get -y install poppler-utils \
-    # intall top
-    #&& apt-get -y install procps \
     && apt-get -y install libgl1-mesa-glx libglib2.0-0 \
-    # fonts needed for pdf -> png convertion
-    #&& apt-get -y install fonts-wqy-zenhei \
-    # library and include for pcre
-    #&& apt-get -y install libpcre3-dev \
     && curl -sSL 'https://install.python-poetry.org' > install-poetry.py \
     && python install-poetry.py \
     && poetry --version \
     && rm install-poetry.py
-
 
 # Create user
 RUN useradd -ms /bin/bash app \
