@@ -16,10 +16,10 @@ import torchvision
 from PIL import Image
 from torchvision.transforms import functional
 
-import ext_utils as utils
-from dataset import COCODataset
-from ext_engine import evaluate, train_one_epoch
-from model import Model
+import mol_classifier.ext_utils as utils
+from mol_classifier.dataset import COCODataset
+from mol_classifier.ext_engine import evaluate, train_one_epoch
+from mol_classifier.model import Model
 
 
 def get_transform_A(train):

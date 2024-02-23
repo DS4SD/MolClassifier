@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.11-slim-bullseye AS base
+FROM docker-eu-public.artifactory.swg-devops.com/zrl-sa-docker-virtual/python:3.11-slim-bullseye AS base
+
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONFAULTHANDLER=1 \
@@ -21,6 +22,7 @@ RUN --mount=type=cache,target=/var/cache/apt,id=apt,sharing=locked \
     && python install-poetry.py \
     && poetry --version \
     && rm install-poetry.py
+
 
 # Create user
 RUN useradd -ms /bin/bash app \

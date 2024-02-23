@@ -8,7 +8,7 @@ import torch
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 
-import ext_utils as utils
+import mol_classifier.ext_utils as utils
 
 
 class CocoEvaluator:

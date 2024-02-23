@@ -2,7 +2,10 @@
 name = "molclassifier"
 version = "0.1.0"
 description = ""
-authors = ["Valery Weber <vwe@zurich.ibm.com>"]
+authors = [
+  "Valery Weber <vwe@zurich.ibm.com>",
+  "Lucas Morin <lum@zurich.ibm.com>"
+]
 readme = "README.md"
 packages = [{include = "mol_classifier"}]
 
@@ -13,7 +16,6 @@ torchvision = "^0.17.0"
 pycocotools = "^2.0.7"
 albumentations = "^1.4.0"
 imantics = "^0.1.12"
-pyproject-flake8 = "^6.1.0"
 more-itertools = "^10.2.0"
 
 [build-system]
@@ -25,12 +27,9 @@ autoflake = "^1.7.3"
 black = "^22.8.0"
 isort = "^5.10.1"
 mypy = "^0.981"
+flake8 = "^5.0.4"
 pep8-naming = "^0.13.2"
-
-[tool.flake8]
-max-line-length = 120
-#extend-ignore = ["E203"]
-#max-complexity = 10
+pre-commit = "^3.6.2"
 
 [tool.autoflake]
 in-place = true
@@ -62,6 +61,7 @@ python_version = "3.11"
 
 [[tool.mypy.overrides]]
 module = [
+  "torch.*",
   "torchvision.*",
   "PIL.*",
   "pycocotools.*",

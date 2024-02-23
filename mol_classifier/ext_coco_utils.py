@@ -7,7 +7,7 @@ import torchvision
 from pycocotools import mask as coco_mask
 from pycocotools.coco import COCO
 
-import ext_transforms as T
+import mol_classifier.ext_transforms as T
 
 
 class FilterAndRemapCocoCategories(object):

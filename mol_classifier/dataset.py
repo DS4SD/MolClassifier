@@ -4,8 +4,8 @@ import numpy as np
 import torch
 from PIL import Image
 
-from coco_utils import load_coco_from_file
-from mask_utils import load_masks
+from mol_classifier.coco_utils import load_coco_from_file
+from mol_classifier.mask_utils import load_masks
 
 # vwe: avoiding DecompressionBombWarning
 Image.MAX_IMAGE_PIXELS = None
