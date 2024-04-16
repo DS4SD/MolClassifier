@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM docker-eu-public.artifactory.swg-devops.com/zrl-sa-docker-virtual/python:3.11-slim-bullseye AS base
+FROM python:3.11-slim-bullseye AS base
 
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
