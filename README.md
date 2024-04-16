@@ -21,8 +21,19 @@
   poetry install
   ```
 
-## Running the model
+## Download the model 
 
 ```
-poetry run python ./mol_classifier/classifier.py infer --dir <your directory containing the images> --checkpoint <path to your checkpoint> --output <your output file name>
+wget https://huggingface.co/ds4sd/MolClassifier/resolve/main/models/molclassifier_model.chpt -P ./data/models/
 ```
+
+## Running the model
+
+- Place the images to annotate in `./data/dataset/`
+
+- Run the model
+  ```
+  poetry run python ./mol_classifier/classifier.py infer --dir ./data/dataset/ --checkpoint ./data/models/molclassifier_model.chpt --output ./data/output.txt
+  ```
+
+- Read predictions in `./data/output.txt`
