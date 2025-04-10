@@ -1,6 +1,6 @@
 # MolClassifier
 
-## Installation Instructions
+## Installation 
 
 - Ensure your distribution has the Python version 3.11:
 
@@ -21,13 +21,13 @@
   poetry install
   ```
 
-## Download the model 
+## Model 
 
 ```
 wget https://huggingface.co/ds4sd/MolClassifier/resolve/main/models/molclassifier_model.chpt -P ./data/models/
 ```
 
-## Running the model
+## Inference
 
 - Place the images to annotate in `./data/dataset/`
 
@@ -37,3 +37,7 @@ wget https://huggingface.co/ds4sd/MolClassifier/resolve/main/models/molclassifie
   ```
 
 - Read predictions in `./data/output.txt`
+
+### Datasets
+
+The training and validation datasets are available on [Zenodo](https://zenodo.org/records/10978564).
