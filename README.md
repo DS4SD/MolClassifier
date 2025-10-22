@@ -2,24 +2,21 @@
 
 ## Installation 
 
-- Ensure your distribution has the Python version 3.11:
+Ensure your distribution has Python version 3.11:
+```
+python3 --version
+pip3 -V
+```
 
-  ```
-  python3 --version
-  pip3 -V
-  ```
+Install poetry
+```
+pip install poetry
+```
 
-- Install poetry
-
-  ```
-  pip install poetry
-  ```
-
-- Install the dependencies
-
-  ```
-  poetry install
-  ```
+Install the dependencies
+```
+poetry install
+```
 
 ## Model 
 
