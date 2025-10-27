@@ -1,7 +1,7 @@
 # MolClassifier
 
 MolClassifier is a model to classify chemical images into categories: "Clean" (corresponding to Molecular Structure), "Markush" (corresponding to Markush structure) and "Trash" (corresponding to Background).
-MolClassifier is presented in [PatCID: an open-access dataset of chemical structures in patent documents](https://www.nature.com/articles/s41467-024-50779-y)
+MolClassifier is presented in [PatCID: an open-access dataset of chemical structures in patent documents](https://www.nature.com/articles/s41467-024-50779-y).
 
 ## Installation 
 
